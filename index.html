@@ -1,249 +1,263 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV – Anis YAHIAOUI</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', 'Segoe UI', sans-serif;
-      background: #000;
-      color: #fff;
-      overflow: hidden;
-    }
-
-    /* TikTok vertical feed */
-    .feed {
-      height: 100vh;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-    }
-
-    .card {
-      height: 100vh;
-      scroll-snap-align: start;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      position: relative;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(59,130,246,0.25), transparent 40%),
-                  radial-gradient(circle at bottom right, rgba(236,72,153,0.25), transparent 40%);
-      z-index: 0;
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 820px;
-      animation: popIn 0.6s ease forwards;
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 22px;
-      font-weight: 500;
-      color: #60a5fa;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 26px;
-      margin-bottom: 16px;
-      color: #93c5fd;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #e5e7eb;
-      margin-bottom: 16px;
-    }
-
-    ul { margin-left: 18px; }
-
-    li {
-      font-size: 17px;
-      line-height: 1.6;
-      margin-bottom: 8px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .tag {
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      font-size: 14px;
-      backdrop-filter: blur(6px);
-    }
-
-    .subtitle {
-      font-size: 14px;
-      color: #9ca3af;
-      margin-bottom: 14px;
-    }
-
-    .hint {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 13px;
-      color: #9ca3af;
-      animation: bounce 1.8s infinite;
-    }
-
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, -8px); }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      h1 { font-size: 36px; }
-      h3 { font-size: 22px; }
-      p, li { font-size: 16px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Anis YAHIAOUI</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    body { background:#f5f5f5; color:#333; line-height:1.6; }
+    .container { max-width: 1000px; margin: 20px auto; background:#fff; padding:40px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.1); overflow-y:auto; scroll-behavior:smooth;}
+    header { text-align:center; margin-bottom:40px;}
+    header h1 { font-size:2.2em; color:#2c3e50; margin-bottom:10px; }
+    header h2 { font-size:1.2em; color:#16a085; }
+    section { margin-bottom:40px;}
+    section h3 { font-size:1.4em; color:#34495e; margin-bottom:15px; border-bottom:2px solid #16a085; display:inline-block; padding-bottom:5px;}
+    ul { list-style:none; padding-left:20px; }
+    li { margin-bottom:8px;}
+    li ul li { list-style:none; padding-left:15px; }
+    li ul li::before { content: "- "; color:#16a085; font-weight:bold;}
+    .skills, .languages { display:flex; flex-wrap:wrap; gap:10px;}
+    .skill-item, .language-item { background:#16a085; color:#fff; padding:8px 12px; border-radius:20px; font-size:0.9em;}
+    .card { background:#ecf0f1; padding:15px 20px; border-radius:10px; margin-bottom:15px; transition: transform 0.3s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.1);}
+    .card h4 { color:#2c3e50; margin-bottom:5px;}
+    .card p { font-size:0.9em; margin-bottom:5px;}
+    strong { color:#2c3e50; }
+    ::-webkit-scrollbar { width:8px;}
+    ::-webkit-scrollbar-track { background:#f5f5f5;}
+    ::-webkit-scrollbar-thumb { background:#16a085; border-radius:4px;}
+    ::-webkit-scrollbar-thumb:hover { background:#1abc9c;}
+    @media (max-width:768px){.container{padding:20px;}}
+</style>
 </head>
 <body>
+<div class="container">
+    <header>
+        <h1>Anis YAHIAOUI</h1>
+        <h2>Développeur full-stack JAVA/Angular - Junior</h2>
+    </header>
 
-<div class="feed">
+    <!-- Compétences clés -->
+    <section>
+        <h3>Compétences clés</h3>
+        <div class="skills">
+            <span class="skill-item">Développement logiciel</span>
+            <span class="skill-item">Grande capacité d’écoute</span>
+            <span class="skill-item">Polyvalent</span>
+            <span class="skill-item">Adaptation rapide</span>
+            <span class="skill-item">Maîtrise des langages web</span>
+            <span class="skill-item">Contrôle qualité & tests</span>
+            <span class="skill-item">Livraison au client</span>
+            <span class="skill-item">Suivi technique & maintenance</span>
+            <span class="skill-item">Gestion de projet</span>
+            <span class="skill-item">Recueil et rédaction des besoins</span>
+            <span class="skill-item">Cahiers des charges & exigences</span>
+            <span class="skill-item">Déploiement & reporting</span>
+        </div>
+    </section>
 
-  <!-- HERO -->
-  <section class="card">
-    <div class="content">
-      <h1>Anis YAHIAOUI</h1>
-      <h2>Développeur Full-Stack Java / Angular – Junior</h2>
-      <p>Développeur full-stack issu d’un parcours MIAGE, spécialisé dans la conception et le développement d’applications web performantes, maintenables et orientées produit.</p>
-      <div class="hint">⬆️ Scroller</div>
-    </div>
-  </section>
+    <!-- Frameworks et langages -->
+    <section>
+        <h3>Frameworks, composants métiers & Web Service</h3>
+        <ul>
+            <li>Angular, Spring Boot, Ionic, Symfony 4/5, CakePHP3, CodeIgniter, Zend Framework, NodeJS, ReactNative</li>
+            <li>Bootstrap, AJAX, Maven, Junit, Cypress</li>
+        </ul>
 
-  <!-- COMPETENCES CLES -->
-  <section class="card">
-    <div class="content">
-      <h3>Compétences clés</h3>
-      <ul>
-        <li>Développement et maintenance de logiciels web</li>
-        <li>Grande capacité d’écoute et compréhension des besoins métier</li>
-        <li>Polyvalence front-end / back-end</li>
-        <li>Adaptation rapide aux évolutions techniques et fonctionnelles</li>
-        <li>Contrôle qualité : tests, correction de bugs, amélioration continue</li>
-        <li>Livraison client, suivi technique et support applicatif</li>
-        <li>Gestion de projet : recueil des besoins, rédaction des exigences</li>
-        <li>Déploiement, bascule SI, suivi et reporting</li>
-      </ul>
-    </div>
-  </section>
+        <h3>Langages de programmation</h3>
+        <ul>
+            <li>Java, JavaFX, SQL, C, C++, Script Shell, PHP, HTML, CSS3, TypeScript, JavaScript</li>
+        </ul>
 
-  <!-- TECH STACK -->
-  <section class="card">
-    <div class="content">
-      <h3>Stack technique</h3>
-      <p class="subtitle">Frameworks & Web Services</p>
-      <div class="tags">
-        <span class="tag">Angular</span><span class="tag">Spring Boot</span><span class="tag">Symfony 4/5</span><span class="tag">Ionic</span><span class="tag">CakePHP</span><span class="tag">CodeIgniter</span><span class="tag">Zend</span><span class="tag">NodeJS</span><span class="tag">React Native</span>
-      </div>
-      <p class="subtitle" style="margin-top:16px">Langages</p>
-      <div class="tags">
-        <span class="tag">Java</span><span class="tag">JavaFX</span><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">C / C++</span><span class="tag">Shell</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
-      </div>
-    </div>
-  </section>
+        <h3>Génie logiciel</h3>
+        <ul>
+            <li>Cahier des charges, Modélisation UML, Méthodes Agiles (Scrum), Design Pattern</li>
+        </ul>
 
-  <!-- EXPERIENCE DIGITEKA -->
-  <section class="card">
-    <div class="content">
-      <h3>Expérience – Digiteka</h3>
-      <p class="subtitle">Développeur Full-Stack | Octobre 2021 – Aujourd’hui</p>
-      <p>Digiteka accompagne de grandes marques médias dans leur stratégie vidéo en France et au Royaume-Uni.</p>
-      <ul>
-        <li>Participation à la conception et au développement de la plateforme client et du player vidéo</li>
-        <li>Développement de l’extension Chrome <strong>Digiteka Log</strong> pour l’analyse des logs</li>
-        <li>Mise en place d’un outil de suivi automatisé des campagnes publicitaires</li>
-        <li>Accompagnement des clients dans l’utilisation des produits</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">Symfony</span><span class="tag">Zend</span><span class="tag">MySQL</span><span class="tag">ElasticSearch</span><span class="tag">AWS S3</span><span class="tag">Git</span><span class="tag">Jira</span>
-      </div>
-    </div>
-  </section>
+        <h3>Environnements de travail</h3>
+        <ul>
+            <li>Github, FileZilla, Logisim, SonarLint, Mantis, Bug Tracker, TestLink, Trello, Jira, GitLab, Docker, Graylog</li>
+        </ul>
 
-  <!-- EXPERIENCE BLACKCOVER -->
-  <section class="card">
-    <div class="content">
-      <h3>Expérience – Blackcover</h3>
-      <p class="subtitle">Développeur Back-End PHP (Alternance) | 2020 – 2021</p>
-      <p>Blackcover est une régie publicitaire appartenant au groupe média Tigersun.</p>
-      <ul>
-        <li>Intégration de nouvelles fonctionnalités dans une solution d’adserving</li>
-        <li>Maintenance applicative avec contraintes de performance et de trafic</li>
-        <li>Gestion du consentement utilisateur et redirection vers les bons datacenters</li>
-        <li>Optimisation du ciblage publicitaire et réduction de la charge trafic</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">PHP</span><span class="tag">Symfony</span><span class="tag">CodeIgniter</span><span class="tag">MySQL</span><span class="tag">Clickhouse</span><span class="tag">NodeJS</span>
-      </div>
-    </div>
-  </section>
+        <h3>Systèmes d’exploitation</h3>
+        <ul>
+            <li>Linux / Unix, Windows</li>
+        </ul>
+    </section>
 
-  <!-- EXPERIENCE DIESE -->
-  <section class="card">
-    <div class="content">
-      <h3>Expérience – Dièse Télécom</h3>
-      <p class="subtitle">Développeur Full-Stack & Assistant Chef de Projet | 2019 – 2020</p>
-      <ul>
-        <li>Développement d’un site de gestion de résidences connectées</li>
-        <li>Transfert de données en temps réel entre cloud et interphones</li>
-        <li>Encadrement de développeurs et formation de stagiaires</li>
-        <li>Rédaction de cahiers des charges et rapports de tests</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">Java</span><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">MySQL</span><span class="tag">Raspberry Pi</span>
-      </div>
-    </div>
-  </section>
+    <!-- Diplômes -->
+    <section>
+        <h3>Diplômes & Formations</h3>
+        <ul>
+            <li>2021 : Master 2 MIAGE Systèmes d’Information et Innovation (S2I) - Université Paris 1 Panthéon Sorbonne</li>
+            <li>2020 : Master 1 Méthodes Informatiques Appliquées à la Gestion des Entreprises - Université Paris 1 Panthéon Sorbonne</li>
+            <li>2019 : Licence 3 MIAGE - Université Paris 1 Panthéon Sorbonne</li>
+            <li>2018 : Licence 2 Informatique - Université Cergy-Pontoise</li>
+        </ul>
+    </section>
 
-  <!-- FORMATION -->
-  <section class="card">
-    <div class="content">
-      <h3>Formation</h3>
-      <ul>
-        <li><strong>Master 2 MIAGE – Systèmes d’Information et Innovation</strong> – Université Paris 1 Panthéon-Sorbonne (2021)</li>
-        <li>Master 1 MIAGE – Université Paris 1 Panthéon-Sorbonne (2020)</li>
-        <li>Licence MIAGE – Université Paris 1 Panthéon-Sorbonne (2019)</li>
-        <li>Licence 2 Informatique – Université de Cergy-Pontoise (2018)</li>
-      </ul>
-      <p class="subtitle" style="margin-top:12px">Langue : Anglais intermédiaire</p>
-    </div>
-  </section>
+    <!-- Expériences professionnelles -->
+    <section>
+        <h3>Expériences professionnelles</h3>
 
+        <div class="card">
+            <h4>Digiteka (Oct 2021 - Présent) - Développeur full-stack</h4>
+            <ul>
+                <li><strong>Projet :</strong> Digiteka accompagne les plus grandes marques médias dans leur stratégie vidéo.</li>
+                <li><strong>Prestations :</strong>
+                    <ul>
+                        <li>Participation à la conception et au développement de la plateforme client et du player.</li>
+                        <li>Accompagnement des clients dans la bonne utilisation des produits.</li>
+                    </ul>
+                </li>
+                <li><strong>Détails :</strong>
+                    <ul>
+                        <li>Extension Chrome "Digiteka Log" pour afficher les logs du player Digiteka.</li>
+                        <li>Développement d'un outil de suivi de l'évolution des campagnes publicitaires.</li>
+                    </ul>
+                </li>
+                <li><strong>Résultats :</strong>
+                    <ul>
+                        <li>Lire les logs du player sous une forme attractive et outil de debug.</li>
+                        <li>Automatiser le suivi quotidien des campagnes publicitaires.</li>
+                    </ul>
+                </li>
+                <li><strong>Technologies :</strong> Git, Jira, MySQL, Amazon S3, ElasticSearch, Symfony, Zend Framework, Bootstrap, JQuery</li>
+                <li><strong>Méthodes :</strong> Agile (Scrum/kanban)</li>
+                <li><strong>Langages :</strong> JavaScript, PHP, SQL</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Blackcover (Sept 2020 - Sept 2021) - Développeur Back-End PHP</h4>
+            <ul>
+                <li><strong>Projet :</strong> Solution d’adserving avec intégrations big data et machine learning.</li>
+                <li><strong>Prestations :</strong>
+                    <ul>
+                        <li>Intégration de nouvelles fonctionnalités et maintenance des fonctionnalités existantes.</li>
+                    </ul>
+                </li>
+                <li><strong>Détails :</strong>
+                    <ul>
+                        <li>Détection de fenêtre de consentement.</li>
+                        <li>Redirection du trafic vers le bon datacenter.</li>
+                    </ul>
+                </li>
+                <li><strong>Résultats :</strong>
+                    <ul>
+                        <li>Optimisation du ciblage publicitaire.</li>
+                        <li>Respect des délais et réduction de la charge du trafic.</li>
+                    </ul>
+                </li>
+                <li><strong>Technologies :</strong> Git, Jira, MySQL, Clickhouse, Symfony, CodeIgniter, NodeJs</li>
+                <li><strong>Langages :</strong> JavaScript, PHP, SQL</li>
+                <li><strong>Méthodes :</strong> Agile (Scrum/kanban)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Dièse Télécom (Sept 2019 - Sept 2020) - Développeur Full Stack & Assistant chef de projet</h4>
+            <ul>
+                <li><strong>Prestations :</strong>
+                    <ul>
+                        <li>Finalisation d'un site web de gestion des résidences et résidents à distance.</li>
+                        <li>Encadrement d’un développeur mobile et formation des stagiaires.</li>
+                        <li>Rédaction de cahiers de charges et rapports de test.</li>
+                    </ul>
+                </li>
+                <li><strong>Détails :</strong>
+                    <ul>
+                        <li>Transfert des données en temps réel.</li>
+                        <li>Ouverture de portes à distance via application mobile "VisioDiese".</li>
+                    </ul>
+                </li>
+                <li><strong>Résultats :</strong>
+                    <ul>
+                        <li>Réduction de la consommation de data.</li>
+                        <li>Respect des délais.</li>
+                    </ul>
+                </li>
+                <li><strong>Technologies :</strong> AJAX, Bootstrap, CakePHP, JQuery, Git, MySQL, Bitbucket</li>
+                <li><strong>Langages :</strong> Java, JavaScript, PHP, SQL, Script Shell</li>
+                <li><strong>Matériels :</strong> Interphone téléphonique, Raspberry Pi</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Dièse Télécom (Avril 2019 - Août 2019) - Développeur Full Stack (Stage)</h4>
+            <ul>
+                <li><strong>Prestations :</strong>
+                    <ul>
+                        <li>Amélioration du site web de gestion des résidences à distance.</li>
+                        <li>Transfert et sécurisation des données entre le Cloud et les interphones.</li>
+                        <li>Réalisation de scripts d'automatisation.</li>
+                    </ul>
+                </li>
+                <li><strong>Détails :</strong>
+                    <ul>
+                        <li>Maintenance des fonctionnalités existantes.</li>
+                        <li>Automatisation de la configuration des interphones.</li>
+                    </ul>
+                </li>
+                <li><strong>Résultats :</strong>
+                    <ul>
+                        <li>Faciliter le travail des installateurs.</li>
+                        <li>Programmation des badges à distance.</li>
+                        <li>Respect des délais.</li>
+                    </ul>
+                </li>
+                <li><strong>Technologies :</strong> AJAX, Bootstrap, CakePHP, JavaScript, JQuery, Git, MySQL, Bitbucket</li>
+                <li><strong>Langages :</strong> Java, JavaScript, PHP, SQL, Script Shell</li>
+                <li><strong>Matériels :</strong> Interphone téléphonique, Raspberry Pi</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Langues -->
+    <section>
+        <h3>Langues</h3>
+        <div class="languages">
+            <span class="language-item">Anglais : Intermédiaire</span>
+        </div>
+    </section>
+
+    <!-- Projets informatiques -->
+    <section>
+        <h3>Projets informatiques</h3>
+        <div class="card">
+            <h4>Site e-commerce avec Stripe</h4>
+            <p>Technologies : Angular, Spring Boot, Bootstrap, SQL</p>
+        </div>
+        <div class="card">
+            <h4>Site e-commerce avec backoffice</h4>
+            <p>Technologies : Symfony5, Bootstrap, SQL</p>
+        </div>
+        <div class="card">
+            <h4>Application mobile universitaire</h4>
+            <p>Technologies : Ionic, Firebase</p>
+        </div>
+        <div class="card">
+            <h4>Clavier visuel pour programmeurs</h4>
+            <p>Technologies : JavaFX</p>
+        </div>
+        <div class="card">
+            <h4>Site Yu-Gi-Oh</h4>
+            <p>Technologies : Symfony4, Bootstrap, SQL</p>
+        </div>
+        <div class="card">
+            <h4>Jeu simulation société des souris</h4>
+            <p>Technologies : Java, Design Patterns (Builder, Factory, Singleton…)</p>
+        </div>
+        <div class="card">
+            <h4>Site trombinoscope</h4>
+            <p>Technologies : PHP, HTML5, CSS3</p>
+        </div>
+        <div class="card">
+            <h4>Application desktop Sitemap XML</h4>
+            <p>Technologies : Java, JavaFX</p>
+        </div>
+    </section>
 </div>
-
 </body>
 </html>
