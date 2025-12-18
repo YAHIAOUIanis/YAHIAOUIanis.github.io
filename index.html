@@ -1,48 +1,249 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-  <head>
-    <title>Anis YAHIAOUI's CV</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV – Anis YAHIAOUI</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <body>    
-    <div class="container">
-      <div class="jumbotron jumbotron-fluid">
-        <h1>Anis YAHIAOUI</h1>
-        <p>Développeur Back-end (alternant)</p> 
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* TikTok vertical feed */
+    .feed {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+
+    .card {
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(59,130,246,0.25), transparent 40%),
+                  radial-gradient(circle at bottom right, rgba(236,72,153,0.25), transparent 40%);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 820px;
+      animation: popIn 0.6s ease forwards;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #60a5fa;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 26px;
+      margin-bottom: 16px;
+      color: #93c5fd;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #e5e7eb;
+      margin-bottom: 16px;
+    }
+
+    ul { margin-left: 18px; }
+
+    li {
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      font-size: 14px;
+      backdrop-filter: blur(6px);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+    }
+
+    .hint {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
+      color: #9ca3af;
+      animation: bounce 1.8s infinite;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -8px); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      h3 { font-size: 22px; }
+      p, li { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="feed">
+
+  <!-- HERO -->
+  <section class="card">
+    <div class="content">
+      <h1>Anis YAHIAOUI</h1>
+      <h2>Développeur Full-Stack Java / Angular – Junior</h2>
+      <p>Développeur full-stack issu d’un parcours MIAGE, spécialisé dans la conception et le développement d’applications web performantes, maintenables et orientées produit.</p>
+      <div class="hint">⬆️ Scroller</div>
+    </div>
+  </section>
+
+  <!-- COMPETENCES CLES -->
+  <section class="card">
+    <div class="content">
+      <h3>Compétences clés</h3>
+      <ul>
+        <li>Développement et maintenance de logiciels web</li>
+        <li>Grande capacité d’écoute et compréhension des besoins métier</li>
+        <li>Polyvalence front-end / back-end</li>
+        <li>Adaptation rapide aux évolutions techniques et fonctionnelles</li>
+        <li>Contrôle qualité : tests, correction de bugs, amélioration continue</li>
+        <li>Livraison client, suivi technique et support applicatif</li>
+        <li>Gestion de projet : recueil des besoins, rédaction des exigences</li>
+        <li>Déploiement, bascule SI, suivi et reporting</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="card">
+    <div class="content">
+      <h3>Stack technique</h3>
+      <p class="subtitle">Frameworks & Web Services</p>
+      <div class="tags">
+        <span class="tag">Angular</span><span class="tag">Spring Boot</span><span class="tag">Symfony 4/5</span><span class="tag">Ionic</span><span class="tag">CakePHP</span><span class="tag">CodeIgniter</span><span class="tag">Zend</span><span class="tag">NodeJS</span><span class="tag">React Native</span>
       </div>
-      <div class="row">
-        <div class="col-sm-8">
-          <div>
-            <h3>Expériences professionnelles</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>  
-          </div>
-          <div>
-            <h3>Diplômes et Formations</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>  
-          </div>
-
-        </div>
-        <div class="col-sm-4">
-          <div>
-            <h3>Informatique</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-          </div>
-          <div>
-            <h3>Langues</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-          </div>          
-        </div>
+      <p class="subtitle" style="margin-top:16px">Langages</p>
+      <div class="tags">
+        <span class="tag">Java</span><span class="tag">JavaFX</span><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">C / C++</span><span class="tag">Shell</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
       </div>
     </div>
-    
-  </body>
+  </section>
+
+  <!-- EXPERIENCE DIGITEKA -->
+  <section class="card">
+    <div class="content">
+      <h3>Expérience – Digiteka</h3>
+      <p class="subtitle">Développeur Full-Stack | Octobre 2021 – Aujourd’hui</p>
+      <p>Digiteka accompagne de grandes marques médias dans leur stratégie vidéo en France et au Royaume-Uni.</p>
+      <ul>
+        <li>Participation à la conception et au développement de la plateforme client et du player vidéo</li>
+        <li>Développement de l’extension Chrome <strong>Digiteka Log</strong> pour l’analyse des logs</li>
+        <li>Mise en place d’un outil de suivi automatisé des campagnes publicitaires</li>
+        <li>Accompagnement des clients dans l’utilisation des produits</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Symfony</span><span class="tag">Zend</span><span class="tag">MySQL</span><span class="tag">ElasticSearch</span><span class="tag">AWS S3</span><span class="tag">Git</span><span class="tag">Jira</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE BLACKCOVER -->
+  <section class="card">
+    <div class="content">
+      <h3>Expérience – Blackcover</h3>
+      <p class="subtitle">Développeur Back-End PHP (Alternance) | 2020 – 2021</p>
+      <p>Blackcover est une régie publicitaire appartenant au groupe média Tigersun.</p>
+      <ul>
+        <li>Intégration de nouvelles fonctionnalités dans une solution d’adserving</li>
+        <li>Maintenance applicative avec contraintes de performance et de trafic</li>
+        <li>Gestion du consentement utilisateur et redirection vers les bons datacenters</li>
+        <li>Optimisation du ciblage publicitaire et réduction de la charge trafic</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">PHP</span><span class="tag">Symfony</span><span class="tag">CodeIgniter</span><span class="tag">MySQL</span><span class="tag">Clickhouse</span><span class="tag">NodeJS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE DIESE -->
+  <section class="card">
+    <div class="content">
+      <h3>Expérience – Dièse Télécom</h3>
+      <p class="subtitle">Développeur Full-Stack & Assistant Chef de Projet | 2019 – 2020</p>
+      <ul>
+        <li>Développement d’un site de gestion de résidences connectées</li>
+        <li>Transfert de données en temps réel entre cloud et interphones</li>
+        <li>Encadrement de développeurs et formation de stagiaires</li>
+        <li>Rédaction de cahiers des charges et rapports de tests</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Java</span><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">MySQL</span><span class="tag">Raspberry Pi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATION -->
+  <section class="card">
+    <div class="content">
+      <h3>Formation</h3>
+      <ul>
+        <li><strong>Master 2 MIAGE – Systèmes d’Information et Innovation</strong> – Université Paris 1 Panthéon-Sorbonne (2021)</li>
+        <li>Master 1 MIAGE – Université Paris 1 Panthéon-Sorbonne (2020)</li>
+        <li>Licence MIAGE – Université Paris 1 Panthéon-Sorbonne (2019)</li>
+        <li>Licence 2 Informatique – Université de Cergy-Pontoise (2018)</li>
+      </ul>
+      <p class="subtitle" style="margin-top:12px">Langue : Anglais intermédiaire</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
 </html>
